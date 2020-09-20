@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      Cliente:{{cliente.nombre}}
+    </div>
+    <div class="col-md-4 mx-auto">
+      Direccion:{{cliente.direccion}}
+    </div>
+    <div class="col-md-2 mx-auto">
+      NIT:{{cliente.nit}}
+    </div>
+
+  </div>
+<br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Empleado</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Total</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Detalle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let item of facturas">
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.empleado}}</td>
+          <td>{{item.creado}}</td>
+          <td>{{item.total}}</td>
+          <td>{{item.estado}}</td>
+          <td><button type="button" (click)="Oncapturar(item)" class="btn btn-danger btn-block">Detalle</button></td>
+        </tr>
+       </tbody>
+    </table>
+  </div>
