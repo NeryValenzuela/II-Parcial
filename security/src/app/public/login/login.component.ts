@@ -10,18 +10,20 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  mensaje: string;
+
   user = {
     nombre: '',
     password: ''
   }
 
   constructor(
-    private security: SecurityService,
-    private router: Router) { }
+   /* private security: SecurityService,
+    private router: Router*/) { }
 
   ngOnInit(): void {
   }
-
+/*
   onLogin(){
     this.security.login(this.user).subscribe(
     (res) => {
@@ -32,5 +34,14 @@ export class LoginComponent implements OnInit {
       console.log(err);
     }
     );
+  }*/
+  onLogin(){
+    if(this.user.nombre === 'admin' && this.user.password === 'admin'){
+    this.mensaje = 'Correcto';
+    }
+    else
+    {
+      this.mensaje = 'Incorrecto';
+    }
   }
 }
